@@ -23,6 +23,7 @@ $(function () {
                 $("#myModal .modal-body").text(res.msg);
                 if (res.code === 200) {
                     $('#myModal').on('hidden.bs.modal', function (e) {
+                        window.localStorage.setItem("token",res.token)
                         window.location.href = "./index.html"
                     })
 
