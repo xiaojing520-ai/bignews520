@@ -10,5 +10,10 @@ $(function () {
                 $(".header_bar img").attr("src", res.data.userPic);
             }
         }
+    });
+    //给退出注册点击事件
+    $(".header_bar .logout").on("click", function () {
+        window.localStorage.removeItem("token");
+        location.href = "./login.html";
     })
 })
