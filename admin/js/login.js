@@ -18,9 +18,10 @@ $(function () {
             },
             success: function (res) {
                 console.log(res);
+                //用户名及密码错误    用户登录成功   都弹出模态框
+                $("#myModal").modal("show");
+                $("#myModal .modal-body").text(res.msg);
                 if (res.code === 200) {
-                    $("#myModal").modal("show");
-                    $("#myModal .modal-body").text(res.msg);
                     $('#myModal').on('hidden.bs.modal', function (e) {
                         window.location.href = "./login.html"
                     })
